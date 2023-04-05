@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     csv.each do |row|
       Movie.create!(category: row['category'], title: row['title'], director: row['director'],
         cast: row['cast'], country: row['country'], date_added: row['date_added'],
-        category: row['release_year'], rating: row['rating'], duration: row['duration'], 
+        release_year: row['release_year'], rating: row['rating'], duration: row['duration'], 
         listed_in: row['listed_in'], description: row['description'])
     end
     head :ok
