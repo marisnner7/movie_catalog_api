@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_233502) do
     t.string "duration"
     t.string "listed_in"
     t.text "description"
-    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

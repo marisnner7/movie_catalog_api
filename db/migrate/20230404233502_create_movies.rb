@@ -12,7 +12,6 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :duration
       t.string :listed_in
       t.text :description
-      t.integer :year
   
       t.timestamps
     end
