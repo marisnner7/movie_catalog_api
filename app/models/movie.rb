@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  scope :ordered_by_release_year, -> { order(release_year: :asc) }
+
   require 'date'
 
   before_save :date_added_as_datetime
