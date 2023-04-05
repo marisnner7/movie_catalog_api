@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     csv.each do |row|
       Movie.create!(category: row['category'], title: row['title'], director: row['director'],
         cast: row['cast'], country: row['country'], date_added: row['date_added'],
-        release_year: row['release_year'], rating: row['rating'], duration: row['duration'], 
+        category: row['release_year'], rating: row['rating'], duration: row['duration'], 
         listed_in: row['listed_in'], description: row['description'])
     end
     head :ok
@@ -16,6 +16,11 @@ class MoviesController < ApplicationController
 
   def index
     movies = Movie.ordered_by_release_year.all
+    
+    %i[category title director country release_year].each do |param|
+      movies = movies.where(param => params[param]) if params[param].present?
+    end
+    
     render json: movies
   end
 end
