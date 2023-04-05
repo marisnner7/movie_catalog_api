@@ -8,18 +8,24 @@ A API está ordenada pelo ano de lançamento (release_year) dos filmes. Foi adic
 
 O endpoint ```/movies``` retorna uma lista de filmes no formato JSON, onde cada filme possui os seguintes campos:
 
-``` id: identificador único do filme
-category: se é série ou filme
-title: título do filme
-director: quem dirigiu
-cast: atores
-country: país de origem do filme
-date_added: data em que foi adicionado
-released_year: data em que foi lançado
-rating: nota recebida
-duration: duração
-listed_in: gêneros
-description: descrição do filme ```
+``` json 
+[
+    { 
+      id: identificador único do filme
+      category: se é série ou filme
+      title: título do filme
+      director: quem dirigiu
+      cast: atores
+      country: país de origem do filme
+      date_added: data em que foi adicionado
+      released_year: data em que foi lançado
+      rating: nota recebida
+      duration: duração
+      listed_in: gêneros
+      description: descrição do filme
+    }
+]
+```
 
 Além disso, o endpoint ```/movies``` possui filtros para "category", "title", "director", "country" e "release_year". Para utilizar esses filtros, basta adicionar os parâmetros correspondentes na URL. 
 
