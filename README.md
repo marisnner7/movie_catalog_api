@@ -33,7 +33,7 @@ Exemplos: ```/movies?release_year=2012``` para um parâmetro
 ou ```/movie?release_year=2012&category=Movie``` sendo o símbolo "&" equivalente a "and". 
 
 ### Para iniciar o repositorio siga os passos:
-clone o repositório com ```git clone ``` e digite o comando "bundle"
+clone o repositório com ```git clone https://github.com/marisnner7/movie_catalog_api/``` e digite o comando "bundle"
 Inicie o banco de dados com ```rails db:setup```
 
 
@@ -42,6 +42,7 @@ A aplicação pode ser encontrada no navegador em localhost:3000
 Para adicionar os filmes do csv no banco de dados, pode ser utilizado o comando:
 
 ``` 
-curl -X POST -F "file=@netflix_titles.csv" http://localhost:3000/movies/create_from_csv  ```
+curl -X POST -F "file=@netflix_titles.csv" http://localhost:3000/movies/create_from_csv
+```
 
-### Observação: no arquivo netflix_titles.csv a coluna 'type' foi alterada para 'category' em razão de type ser uma palavra reservado do ruby. Não altera em nada o resultado final pretendido com a aplicação. 
+!!!Observação: no arquivo netflix_titles.csv a coluna 'type' foi alterada para 'category' em razão de type ser uma palavra reservado do ruby. Não altera em nada o resultado final pretendido com a aplicação. 
